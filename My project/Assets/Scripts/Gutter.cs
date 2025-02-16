@@ -8,9 +8,16 @@ public class Gutter : MonoBehaviour
 
         float velocityMagnitude = ballRigidBody.linearVelocity.magnitude;
 
-        ballRigidBody.linearVelocity = Vector3.zero;
-        ballRigidBody.angularVelocity = Vector3.zero;
 
-        ballRigidBody.AddForce(Vector3.left * velocityMagnitude, ForceMode.VelocityChange);
+        if (triggeredBody.CompareTag("Ball"))
+        {
+
+            ballRigidBody.linearVelocity = Vector3.zero;
+            ballRigidBody.angularVelocity = Vector3.zero;
+
+            ballRigidBody.AddForce(Vector3.left * velocityMagnitude, ForceMode.VelocityChange);
+
+        }
+        
     }
 }
